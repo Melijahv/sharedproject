@@ -15,7 +15,7 @@ the site will save search results and movies watched for the user locally.
 
 CSS Frame work: 
 				
-				Bulam
+				Bulma
 
 
 Potential API's:
