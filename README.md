@@ -20,6 +20,6 @@ CSS Frame work:
 
 Potential API's:
 
-				Undefined
-				Undefined
+				https://rapidapi.com/utelly/api/utelly
+				https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative/
 				
