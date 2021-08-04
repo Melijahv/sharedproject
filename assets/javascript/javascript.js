@@ -25,26 +25,21 @@ function getApi() {
             console.log(data);
 
             for (var i = 0; i < data.results.length; i++) {
-              cardGenerator(data.results[i])
-           }
-/*REMOVE LATER
-            for (var i = 0; i < data.results.length; i++) {
-
-
-                var title = document.createElement('h3');
-                var released = document.createElement('p');
-                var thumbImage = document.createElement('img');
-
-                title.textContent = data.results.length.title;
-                released.textContent = data.results[i].firstAirYear;
-                thumbImage.src = data.results[i].posterURLs[92];
-
-                issueContainer.append(title);
-                issueContainer.append(released);
-                issueContainer.append(thumbImage);
+                cardGenerator(data.results[i])
             }
-
-            */
+            /*REMOVE LATER
+                        for (var i = 0; i < data.results.length; i++) {
+                            var title = document.createElement('h3');
+                            var released = document.createElement('p');
+                            var thumbImage = document.createElement('img');
+                            title.textContent = data.results.length.title;
+                            released.textContent = data.results[i].firstAirYear;
+                            thumbImage.src = data.results[i].posterURLs[92];
+                            issueContainer.append(title);
+                            issueContainer.append(released);
+                            issueContainer.append(thumbImage);
+                        }
+                        */
 
 
 
@@ -70,6 +65,7 @@ function generateInfoDisplayArea(movieInfoArray) {
 
 //Card Generator
 function cardGenerator(movieObj) {
+    console.log(movieObj);
     //Setting up variables based on incoming Object Data
     var movieTitle = movieObj.title
     var moviePlot = movieObj.overview
@@ -83,8 +79,10 @@ function cardGenerator(movieObj) {
     var streamInfo = ""
     for (var i = 0; i < Object.keys(stream).length; i++) {
         var service = Object.keys(stream)[i];
-        var link = Object.keys(stream)[i].us.link;
-        var streamInfoItem = `<a href="${link}">${service}</a>`;
+
+        var streamLink = stream[Object.keys(stream)[i]].us.link;
+        var streamInfoItem = `<a href="${streamLink}">${service}</a>`;
+
         streamInfo = streamInfo + streamInfoItem;
     }
     var displayCard = `<div class="card"><h2 class="title">${movieTitle}</h2><img src="${moviePoster}"><h3>${movieYear}</h3><p>${moviePlot}</p><p>${streamInfo}</p></div>`
