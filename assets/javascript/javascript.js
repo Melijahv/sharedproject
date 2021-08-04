@@ -83,7 +83,7 @@ function cardGenerator(movieObj) {
     var streamInfo = ""
     for (var i = 0; i < Object.keys(stream).length; i++) {
         var service = Object.keys(stream)[i];
-        //var link = Object.keys(stream)[i].us.link;
+        var link = Object.keys(stream)[i].us.link;
         var streamInfoItem = `<a href="${link}">${service}</a>`;
         streamInfo = streamInfo + streamInfoItem;
     }
