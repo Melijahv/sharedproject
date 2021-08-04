@@ -79,8 +79,10 @@ function cardGenerator(movieObj) {
     var streamInfo = ""
     for (var i = 0; i < Object.keys(stream).length; i++) {
         var service = Object.keys(stream)[i];
+
         var streamLink = stream[Object.keys(stream)[i]].us.link;
         var streamInfoItem = `<a href="${streamLink}">${service}</a>`;
+
         streamInfo = streamInfo + streamInfoItem;
     }
     var displayCard = `<div class="card"><h2 class="title">${movieTitle}</h2><img src="${moviePoster}"><h3>${movieYear}</h3><p>${moviePlot}</p><p>${streamInfo}</p></div>`
