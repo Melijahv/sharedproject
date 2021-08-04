@@ -24,8 +24,10 @@ function getApi() {
         .then(function(data) {
             console.log(data);
 
-
-
+            for (var i = 0; i < data.results.length; i++) {
+              cardGenerator(data.results[i])
+           }
+/*REMOVE LATER
             for (var i = 0; i < data.results.length; i++) {
 
 
@@ -33,7 +35,7 @@ function getApi() {
                 var released = document.createElement('p');
                 var thumbImage = document.createElement('img');
 
-                title.textContent = data.results[i].title;
+                title.textContent = data.results.length.title;
                 released.textContent = data.results[i].firstAirYear;
                 thumbImage.src = data.results[i].posterURLs[92];
 
@@ -42,7 +44,14 @@ function getApi() {
                 issueContainer.append(thumbImage);
             }
 
+            */
+
+
+
+
+
         });
+
 }
 
 fetchButton.addEventListener('click', getApi);
@@ -50,11 +59,14 @@ fetchButton.addEventListener('click', getApi);
 
 
 //Info Area Generator
+/*REMOVE IF WORKING
 function generateInfoDisplayArea(movieInfoArray) {
     for (var i = 0; i < streamingObject.length; i++) {
         cardGenerator(streamingObject[i])
     }
 }
+*/
+
 
 //Card Generator
 function cardGenerator(movieObj) {
@@ -71,7 +83,7 @@ function cardGenerator(movieObj) {
     var streamInfo = ""
     for (var i = 0; i < Object.keys(stream).length; i++) {
         var service = Object.keys(stream)[i];
-        var link = Object.keys(stream)[i].us.link;
+        //var link = Object.keys(stream)[i].us.link;
         var streamInfoItem = `<a href="${link}">${service}</a>`;
         streamInfo = streamInfo + streamInfoItem;
     }
