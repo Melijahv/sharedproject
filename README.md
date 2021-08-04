@@ -15,11 +15,15 @@ the site will save search results and movies watched for the user locally.
 
 CSS Frame work: 
 				
-				Bulam
+				Bulma
 
 
 Potential API's:
 
 				https://rapidapi.com/utelly/api/utelly
+				or 
+				https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/
+				
+				
 				https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative/
 				
