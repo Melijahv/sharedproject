@@ -67,12 +67,28 @@ fetch(url, {
 })
 .then(function(data){
   console.log(data)
+  var movie = []
+for (let i = 0; i < data.Search.length; i++) {
+  const element = data.Search[i];
+  console.log(data.Search[i].imdbID)
+  movie.push(data.Search[i].imdbID)
 
+}
+
+console.log(movie)
 
 })
 .catch(err => {
 	console.error(err);
 });
-
 }
+
 document.getElementById("search").addEventListener("click", startSearch)
+
+async function asyncCall() {
+  console.log('calling');
+  const result = await getApi();
+  console.log(result);
+  // expected output: "resolved"
+}
+asyncCall();
