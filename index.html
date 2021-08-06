@@ -8,12 +8,15 @@
     <title>
         PROJECT FILM
     </title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
         rel="stylesheet">
+    <!--OWL CAROUSEL-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+
     <!-- BOX ICONS -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!--MATERIALIZE CSS-->
@@ -21,7 +24,7 @@
 
     <!-- APP CSS -->
     <link rel="stylesheet" href="./assets/stylesheet/grid.css">
-    <link rel="stylesheet" href="./assets/stylesheet/app..css">
+    <link rel="stylesheet" href="./assets/stylesheet/app.css">
 </head>
 
 <body>
@@ -35,45 +38,248 @@
                 </a>
                 <input type='text' placeholder='Search...' id='search-text-input' />
                 <ul class="nav-menu" id="nav-menu">
-                    <div id="searchWrapper">
-                        <input type="text" name="searchBar" id="searchBar" placeholder="search for movie" />
-                    </div>
-
-                    <button id='fetch-button'>test javascript<button>
-
-                            <ul class="nav-menu" id="nav-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">NEW</a></li>
-                                <li><a href="#">POPULAR</a></li>
-                                <li><a href="#">WATCHLIST</a></li>
-                            </ul>
+                    <li><a href="#">NEW</a></li>
+                    <li><a href="#">POPULAR</a></li>
+                    <li><a href="#">WATCHLIST</a></li>
+                </ul>
             </div>
         </div>
     </div>
+    <!-- END NAV -->
 
-
-
-
-
-
-    <!--INFO-->
-    <div class="card-area"></div>
-
-
-
+    <!-- TOP MOVIE SECTION -->
+    <div class="hero-section">
+        <!-- HERO SLIDE -->
+        <div class="hero-slide">
+            <div class="owl-carousel carousel-nav-center" id="hero-carousel">
+                <!-- SLIDE ITEM -->
+                <div class="hero-slide-item">
+                    <img src="./assets/images/junglecruise.png" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                Jungle Cruise
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt
+                                non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias
+                                ratione mollitia accusantium, facere ab suscipit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END SLIDE ITEM -->
+                <!-- SLIDE ITEM -->
+                <div class="hero-slide-item">
+                    <img src="./assets/images/f9.png" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                F9
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt
+                                non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias
+                                ratione mollitia accusantium, facere ab suscipit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END SLIDE ITEM -->
+                <!-- SLIDE ITEM -->
+                <div class="hero-slide-item">
+                    <img src="./assets/images/blackwidow.png" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                Black Widow
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt
+                                non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias
+                                ratione mollitia accusantium, facere ab suscipit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slide-item">
+                    <img src="./assets/images/greenknight.png" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                The Green Knight
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt
+                                non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias
+                                ratione mollitia accusantium, facere ab suscipit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slide-item">
+                    <img src="./assets/images/spacejam.png" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                Space jam
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt
+                                non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias
+                                ratione mollitia accusantium, facere ab suscipit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--ENF OF MOVIE SECTION-->
 
 
     <!--DROPDOWN FILTERS-->
-
-
-
-
-
-    <!--MOVIE LIST-->
-
-
-
-
+    <div class="dropdown-wrapper">
+        <div class="container">
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">GENRE</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#about">About</a>
+                    <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">YEAR</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#about">About</a>
+                    <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">RATING</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#about">About</a>
+                    <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">AGE RATING</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#about">About</a>
+                    <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- FOOTER SECTION -->
@@ -123,6 +329,7 @@
                                 <ul class="footer-menu">
                                     <li><a href="#">About us</a></li>
                                     <li><a href="#">My profile</a></li>
+                                    <li><a href="#">Pricing plans</a></li>
                                     <li><a href="#">Contacts</a></li>
                                 </ul>
                             </div>
@@ -133,6 +340,7 @@
                                 <ul class="footer-menu">
                                     <li><a href="#">About us</a></li>
                                     <li><a href="#">My profile</a></li>
+                                    <li><a href="#">Pricing plans</a></li>
                                     <li><a href="#">Contacts</a></li>
                                 </ul>
                             </div>
@@ -163,10 +371,10 @@
 
     <!-- COPYRIGHT SECTION -->
     <div class="copyright">
-        Copyright © 2021 Cool Kids
+        Copyright 2021 COOL KIDS</a>
     </div>
     <!-- END COPYRIGHT SECTION -->
-    <<<<<<< HEAD </footer>
+    <<<<<<< HEAD <<<<<<< HEAD </footer>
 
 </html>
 >>>>>>> Stashed changes
@@ -180,3 +388,24 @@
 
 </body>
 >>>>>>> 02e0795af71d272e2a472c8eb49b03da7d611620
+=======
+
+<!-- SCRIPT -->
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- OWL CAROUSEL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous"></script>
+<!-- APP SCRIPT -->
+<script src="./assets/javascript/javascript.js"></script>
+<script src="./assets/javascript/jsSearch.js"></script>
+<script src="./assets/javascript/owlcarouse.js"></script>
+
+
+
+</body>
+
+</html>
+>>>>>>> origin/main
