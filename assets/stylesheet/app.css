@@ -574,3 +574,42 @@ footer .content {
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;
 }
+.cardHolder{
+
+    position: relative;
+    text-align:center;
+    
+}
+.card{
+
+    position: relative;
+    display: inline-table;
+    margin: 10px;
+    width: 20%;
+
+}
+.movieTitle{
+
+    position: absolute;
+    width: 100%;
+    background-color: #2d2bc07a;
+  
+
+}
+.moviePoster{
+
+
+
+}
+.moviePlot{
+
+
+}
+.movieYear{
+
+
+}
+.streamInfo{
+
+
+}
