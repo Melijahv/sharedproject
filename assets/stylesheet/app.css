@@ -198,6 +198,8 @@ a.movie-item:hover {
 }
 
 .hero-slide-item {
+    display: inline-flex;
+    width:25%;
     padding-top: 40%;
     position: relative;
     overflow: hidden;
