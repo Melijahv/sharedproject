@@ -11,7 +11,7 @@ function getApi() {
     fetch(url, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "f81022f835mshbf99f2d4bc03aacp1f2861jsn4e89257474b6",
+            "x-rapidapi-key": "9d6dc1598cmsh52c69e6dce9a0cap151e7fjsn639987602eaf",
             "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
 
 
