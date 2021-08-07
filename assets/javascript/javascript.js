@@ -88,3 +88,26 @@ function cardGenerator(movieObj) {
     var displayCard = `<div class="card"><h2 class="title">${movieTitle}</h2><img src="${moviePoster}"><h3>${movieYear}</h3><p>${moviePlot}</p><p>${streamInfo}</p></div>`
     $(".card-area").append(displayCard);
 }
+
+//Search History Funtion
+//Save's history as additonal data in the searchbar
+function searchHistory(searchItem) {
+    var history = localStorage.getItem("searchHistory")
+        //Check if there's existing history
+    if (history === null) {
+        //If there's no exisiting history, make a new blank entry
+        localStorage.setItem("searchHistory", "")
+    }
+    if (!history.includes(searchItem)) {
+        history = "<option>" + searchItem + "</option>" + history;
+    }
+    //Save it to local storage
+    localStorage.setItem("searchHistory", history)
+        //pull newly updated version from local storage
+    var historyList = localStorage.getItem("searchHistory")
+        //Clear out whatever's there in history to begin with
+    $("#search-history").empty();
+    //Add the new search history list
+    $("#search-history").append(historyList)
+    console.log(historyList);
+}
