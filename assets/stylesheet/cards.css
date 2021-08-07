@@ -1,0 +1,28 @@
+.card-area {
+    border: black;
+    padding-top: 25;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    width: 25%;
+}
+
+.serviceButton {
+    color: red;
+    cursor: pointer;
+}
+
+#fetch-button {
+    background-color: #c0392b;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+}

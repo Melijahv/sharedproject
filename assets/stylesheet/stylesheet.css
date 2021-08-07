@@ -516,6 +516,14 @@ a:hover {
   margin-bottom: auto;
 }
 
+.card-area {
+  border: lightgray;
+  align-items: center;
+}
+
+
+
+
 /* Margin-top */
 .mt-0 {
   margin-top: 0;

@@ -9,19 +9,19 @@ function getApi() {
     var url = "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=series&genre=18&page=10&language=en";
 
     fetch(url, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "9d6dc1598cmsh52c69e6dce9a0cap151e7fjsn639987602eaf",
-                "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "f81022f835mshbf99f2d4bc03aacp1f2861jsn4e89257474b6",
+            "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
 
 
-            }
+        }
 
-        })
-        .then(function(response) {
+    })
+        .then(function (response) {
             return response.json();
         })
-        .then(function(data) {
+        .then(function (data) {
             console.log(data);
 
             for (var i = 0; i < data.results.length; i++) {
@@ -81,7 +81,7 @@ function cardGenerator(movieObj) {
         var service = Object.keys(stream)[i];
 
         var streamLink = stream[Object.keys(stream)[i]].us.link;
-        var streamInfoItem = `<a href="${streamLink}">${service}</a>`;
+        var streamInfoItem = `<a href="${streamLink}"><button class="serviceButton">${service}</button></a>`;
 
         streamInfo = streamInfo + streamInfoItem;
     }
