@@ -11,27 +11,29 @@ function searchType(urlObj) {
 	switch (urlObj)
 	{
 	case "search":
-		
-        startSearch();
+        var movieSearch = $("#search-text-input").val()
+        var searchUrl = `https://movie-database-imdb-alternative.p.rapidapi.com/?s=${movieSearch}&page=1&r=json`;
+        startSearch(searchUrl);
+
         break
 	case "new":
-        var newRelease = `https://streaming-availability.p.rapidapi.com/get/basic?country=us`
-        searchMovie(newRelease);
-        alert(urlObj);
+        var newRelease = `https://movie-database-imdb-alternative.p.rapidapi.com/?min_imdb_rating=95&page=1&r=json`
+        startSearch(newRelease);
+        
 		break
     case "popular":
 		
         var popularMovies = `https://streaming-availability.p.rapidapi.com/get/basic?country=us`
-        searchMovie(popularMovies);
-        alert(urlObj);
+        startSearch(popularMovies);
+        
 		break
     case "watchlist":
 		    
-        alert(urlObj);
+        
 		break
     case "mpaaRating":
 		   
-        alert(urlObj);
+        
 		break
 	default:
 		
@@ -40,9 +42,9 @@ function searchType(urlObj) {
 
 
 
-function startSearch() {
-    var movieSearch = $("#search-text-input").val()
-        var url = `https://movie-database-imdb-alternative.p.rapidapi.com/?s=${movieSearch}&page=1&r=json`;
+function startSearch(newUrl) {
+    
+        var url = newUrl
   
 
   fetch(url, {
@@ -63,7 +65,7 @@ function startSearch() {
   { 
     
     var sUrl = `https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=${data.Search[i].imdbID}`;
-    //searchMovie(data.Search[i].imdbID);
+    
     searchMovie(sUrl);
   } 
 })
@@ -75,6 +77,7 @@ function startSearch() {
 //////////////////////////////////       GET MOVIE DATA FROM DATABASE      ///////////////////////////////////
 function searchMovie(searchResults) {
     
+    console.log(searchResults);
     var url = searchResults;
 
     fetch(url, {
@@ -92,7 +95,7 @@ function searchMovie(searchResults) {
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
+            
             cardGenerator(data);
             
  

@@ -22,7 +22,7 @@ body {
     font-family: "Cairo", sans-serif;
     background-color: var(--body-bg);
     color: var(--text-color);
-    padding-top: var(--nav-height);
+    
 }
 
 a {
@@ -516,7 +516,7 @@ footer .content {
 
 /* Dropdown Button */
 .dropbtn {
-    position: relative;
+    
     background-color: #c0392b;
     
     color: white;
