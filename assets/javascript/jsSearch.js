@@ -14,7 +14,7 @@ function searchType(urlObj) {
         var movieSearch = $("#search-text-input").val()
         var searchUrl = `https://movie-database-imdb-alternative.p.rapidapi.com/?s=${movieSearch}&page=1&r=json`;
         startSearch(searchUrl);
-
+	searchHistory(searchUrl);
         break
 	case "new":
             var newMovies = ["tt6264654", "tt2452150", "tt6246322", "tt10366460", "tt8800266", "tt8639136", "tt10832274", "tt12636872"];
@@ -189,3 +189,25 @@ let navText = ["<i class='bx bx-chevron-left'></i>", "<i class='bx bx-chevron-ri
 			
 }
 
+//Search History Funtion
+//Save's history as additonal data in the searchbar
+function searchHistory(searchItem) {
+    var history = localStorage.getItem("searchHistory")
+        //Check if there's existing history
+    if (history === null) {
+        //If there's no exisiting history, make a new blank entry
+        localStorage.setItem("searchHistory", "")
+    }
+    if (!history.includes(searchItem)) {
+        history = "<option>" + searchItem + "</option>" + history;
+    }
+    //Save it to local storage
+    localStorage.setItem("searchHistory", history)
+        //pull newly updated version from local storage
+    var historyList = localStorage.getItem("searchHistory")
+        //Clear out whatever's there in history to begin with
+    $("#search-history").empty();
+    //Add the new search history list
+    $("#search-history").append(historyList)
+    console.log(historyList);
+}
