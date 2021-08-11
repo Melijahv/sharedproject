@@ -29,25 +29,58 @@
     <!-- NAV -->
     <div class="nav-wrapper">
         <div class="container">
+            <div class="dropdown-wrapper">
+                <div class="container">
+                    <div class="dropdown">
+                        <button id = "genre" class="dropbtn">GENRE</button>
+                        <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                     
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                        <button id = "year" class="dropbtn">YEAR</button>
+                        <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+         
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                        <button id = "rank" class="dropbtn">RANK</button>
+                        <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                        <button id ="mpaaRating"  class="dropbtn">AGE RATING</button>
+                        <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        
+                        </div>
+                      </div>
+                </div>
+            </div>
             <div class="nav">
                 <a href="#" class="logo">
                     <i class='bx bx-movie-play bx-tada main-color'></i>PROJECT<span class="main-color">FILM</span>
                 </a>
                 <input type='text' placeholder='Search...' id='search-text-input' list="search-history"/>
-                <button id ="search" class = "button">Search</button>
+                <button id ="search" class = "dropbtn">Search</button>
                 <datalist id="search-history">
                   
                 </datalist>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#">NEW</a></li>
-                    <li><a href="#">POPULAR</a></li>
-                    <li><a href="#">WATCHLIST</a></li>
+                    <li><a id ="new" href="#">NEW</a></li>
+                    <li><a id = "popular" href="#">POPULAR</a></li>
+                    <li><a id = "watchlist" href="#">WATCHLIST</a></li>
                 </ul>
+                
             </div>
         </div>
     </div>
     <!-- END NAV -->
-
+  
     <!-- TOP MOVIE SECTION -->
     <div class="hero-section">
         <!-- HERO SLIDE -->
@@ -210,68 +243,14 @@
                 </div>
             </div>
         </div>
-        <div id ="cardHolder"class = "cardHolder"></div>
-    </div>
+  </div>
     <!--ENF OF MOVIE SECTION-->
 
+    <div id="owl-test" class="owl-carousel">
+    </div>
 
     <!--DROPDOWN FILTERS-->
-    <div class="dropdown-wrapper">
-        <div class="container">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">GENRE</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                  <a href="#about">About</a>
-                  <a href="#base">Base</a>
-                  <a href="#blog">Blog</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#custom">Custom</a>
-                  <a href="#support">Support</a>
-                  <a href="#tools">Tools</a>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">YEAR</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                  <a href="#about">About</a>
-                  <a href="#base">Base</a>
-                  <a href="#blog">Blog</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#custom">Custom</a>
-                  <a href="#support">Support</a>
-                  <a href="#tools">Tools</a>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">RATING</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                  <a href="#about">About</a>
-                  <a href="#base">Base</a>
-                  <a href="#blog">Blog</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#custom">Custom</a>
-                  <a href="#support">Support</a>
-                  <a href="#tools">Tools</a>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">AGE RATING</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                  <a href="#about">About</a>
-                  <a href="#base">Base</a>
-                  <a href="#blog">Blog</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#custom">Custom</a>
-                  <a href="#support">Support</a>
-                  <a href="#tools">Tools</a>
-                </div>
-              </div>
-        </div>
-    </div>
+    
 
 
     <!-- FOOTER SECTION -->

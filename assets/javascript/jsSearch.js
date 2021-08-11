@@ -1,21 +1,40 @@
+
+
+///////////////////////////////  UNIVERSAL EVENT LISTENER     ///////////////////////
 document.addEventListener("click", function(evnt){
   console.log(evnt.target.id);
   searchType(evnt.target.id);
 });
 
-
+///////////////////////////// HANDLES BUTTON LOGIC          //////////////////
 function searchType(urlObj) {
 	switch (urlObj)
 	{
 	case "search":
-		    startSearch();
-    break
-	case "genre":
-		    var genreUrl = `https://streaming-availability.p.rapidapi.com/get/basic?country=us&genres=18`;
-        searchMovie(genreUrl);
+		
+        startSearch();
+        break
+	case "new":
+        var newRelease = `https://streaming-availability.p.rapidapi.com/get/basic?country=us`
+        searchMovie(newRelease);
+        alert(urlObj);
+		break
+    case "popular":
+		
+        var popularMovies = `https://streaming-availability.p.rapidapi.com/get/basic?country=us`
+        searchMovie(popularMovies);
+        alert(urlObj);
+		break
+    case "watchlist":
+		    
+        alert(urlObj);
+		break
+    case "mpaaRating":
+		   
+        alert(urlObj);
 		break
 	default:
-		//alert("Suit yourself then...");
+		
 	}
 }
 
@@ -53,7 +72,7 @@ function startSearch() {
 });
 
 }
-
+//////////////////////////////////       GET MOVIE DATA FROM DATABASE      ///////////////////////////////////
 function searchMovie(searchResults) {
     
     var url = searchResults;
@@ -73,22 +92,29 @@ function searchMovie(searchResults) {
             return response.json();
         })
         .then(function(data) {
-            
-            cardGenerator(data)
+            console.log(data);
+            cardGenerator(data);
             
  
         });
 
 }
+
+//////////////////////////////////      TAKE MOVIE DATA OBJECT AND FORMAT THE DISPLAY      ///////////////////////////////////
+
+
 function cardGenerator(movieObj) {
-  console.log(movieObj);
+  
   //Setting up variables based on incoming Object Data;
-  var movieTitle = movieObj.title;
-  var moviePlot = movieObj.overview;
-  var movieYear = movieObj.year;
-  var moviePoster = movieObj.posterURLs.original;
-  //var movieCast = movieObj.cast;
-  //var moviePosterThumb = movieObj.posterURLs["92"];
+  var movieTitle       = movieObj.title;
+  var moviePlot        = movieObj.overview;
+  var movieYear        = movieObj.year;
+  var movieRank        = movieObj.imdbRating;
+  var movieAge         = movieObj.age;
+  var movieRuntime     = movieObj.runtime;
+  var moviePoster      = movieObj.posterURLs.original;
+  //var movieCast      = movieObj.cast;
+  var moviePosterThumb = movieObj.posterURLs["92"];
 
   //Since there are multiple streaing option this lists them all with links
   var stream = movieObj.streamingInfo;
@@ -101,19 +127,66 @@ function cardGenerator(movieObj) {
 
       streamInfo = streamInfo + streamInfoItem;
   }
-  var displayCard =  `
-                      <div class="card">
-                      <h2 class="movieTitle">${movieTitle}</h2>
-                      <img class ="moviePoster"src="${moviePoster}">
-                      <h3 class = "movieYear">${movieYear}</h3>
-                      <p class = "moviePlot">${moviePlot}</p>
-                      <p class = "streamInfo">${streamInfo}</p>
-                      </div>`;
-
-
-  $(".cardHolder").append(displayCard);
-
   
 
+  var html = '';   
+		var owl = $('#owl-test').owlCarousel({
+		    loop:true,
+		    smartSpeed: 100,
+		    autoplay: true,
+		    autoplaySpeed: 100,
+		    mouseDrag: false,
+		    margin:10,
+		    animateIn: 'slideInUp',
+		    animateOut: 'fadeOut',
+		    nav:false,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:1
+		        },
+		        1000:{
+		            items:1
+		        }
+		    }
+		});
 
+//////////////////////////////////       GENERATE THE HTML DYN      ///////////////////////////////////       
+    owl.trigger('add.owl.carousel', [jQuery(
+     `<div class="hero-slide-item">
+    <img class ="loadImageClass" src="${moviePoster}" alt="">
+    <div class="overlay"></div>
+    <div class="hero-slide-item-content">
+        <div class="item-content-wraper">
+            <div class="item-content-title top-down">
+                ${movieTitle}
+            </div>
+            <div class="movie-infos top-down delay-2">
+                <div class="movie-info">
+                    <i class="bx bxs-star"></i>
+                    <span>${movieRank}</span>
+                </div>
+                <div class="movie-info">
+                    <i class="bx bxs-time"></i>
+                    <span>${movieRuntime}</span>
+                </div>
+                <div class="movie-info">
+                    <span>${movieTitle}</span>
+                </div>
+                <div class="movie-info">
+                    <span>${movieAge}</span>
+                </div>
+            </div>
+            <div class="item-content-description top-down delay-4">
+                ${moviePlot}
+            </div>
+        </div>
+    </div>
+</div>`)]);
+	
+			owl.trigger('refresh.owl.carousel');
+			
 }
+
