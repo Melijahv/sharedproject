@@ -63,11 +63,14 @@ img {
 }
 
 .nav {
-    display: flex;
+    position: fixed;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.603);
     align-items: center;
     justify-content: space-between;
     color: var(--text-color);
     height: var(--nav-height);
+    width: 100%;
 }
 
 .nav a {
@@ -80,10 +83,12 @@ img {
 }
 
 .nav-menu {
+    display: inline-flex;
     list-style-type: none;
-    display: flex;
     align-items: center;
     padding: 0 20px;
+    position: relative;
+    top: -10%;
 }
 
 .nav-menu li ~ li {
@@ -518,12 +523,13 @@ footer .content {
 .dropbtn {
     
     background-color: #c0392b;
-    
-    color: white;
+    position: relative;
+    top:-8%;
+    color: rgb(255, 255, 255);
     font-size: 16px;
     margin-right: 5px;
+    margin-left: 5px;
     padding: 5px;
-    top: 10px;
     border: solid;
     border-color: rgb(70, 66, 66);
     border-width: 2px;
@@ -623,7 +629,6 @@ footer .content {
 
     background-color: red;
     padding: 2px;
-    mar
 
 
 }
@@ -654,5 +659,12 @@ footer .content {
     display: inline;
     position: relative;
 
+}
+#search-text-input{
+
+    position: relative;
+    top:-10%;
+    height: 50%;
+    width: 50%;
 }
    

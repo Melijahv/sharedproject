@@ -77,6 +77,7 @@ function startSearch(newUrl) {
 //////////////////////////////////       GET MOVIE DATA FROM DATABASE      ///////////////////////////////////
 function searchMovie(searchResults) {
     
+
     console.log(searchResults);
     var url = searchResults;
 
