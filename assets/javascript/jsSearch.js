@@ -131,29 +131,18 @@ function cardGenerator(movieObj) {
       streamInfo = streamInfo + streamInfoItem;
   }
   
-
+  
   var html = '';   
-		var owl = $('#owl-test').owlCarousel({
-		    loop:true,
-		    smartSpeed: 100,
-		    autoplay: true,
-		    autoplaySpeed: 100,
-		    mouseDrag: false,
-		    margin:10,
-		    animateIn: 'slideInUp',
-		    animateOut: 'fadeOut',
-		    nav:false,
-		    responsive:{
-		        0:{
-		            items:1
-		        },
-		        600:{
-		            items:1
-		        },
-		        1000:{
-		            items:1
-		        }
-		    }
+let navText = ["<i class='bx bx-chevron-left'></i>", "<i class='bx bx-chevron-right'></i>"]  
+  var owl = $('#owl-test').owlCarousel({
+            items: 1,
+            dots: false,
+            loop: true,
+            nav:true,
+            navText: navText,
+            autoplay: true,
+            autoplayHoverPause: true
+		   
 		});
 
 //////////////////////////////////       GENERATE THE HTML DYN      ///////////////////////////////////       
@@ -181,6 +170,9 @@ function cardGenerator(movieObj) {
                 <div class="movie-info">
                     <span>${movieAge}</span>
                 </div>
+                <div class="movie-info">
+                <span class = "streamInfo">${streamInfo}</span>
+            </div>
             </div>
             <div class="item-content-description top-down delay-4">
                 ${moviePlot}
