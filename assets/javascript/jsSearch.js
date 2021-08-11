@@ -14,7 +14,7 @@ function searchType(urlObj) {
         var movieSearch = $("#search-text-input").val()
         var searchUrl = `https://movie-database-imdb-alternative.p.rapidapi.com/?s=${movieSearch}&page=1&r=json`;
         startSearch(searchUrl);
-	searchHistory(searchUrl);
+	searchHistory(movieSearch);
         break
 	case "new":
             var newMovies = ["tt6264654", "tt2452150", "tt6246322", "tt10366460", "tt8800266", "tt8639136", "tt10832274", "tt12636872"];
