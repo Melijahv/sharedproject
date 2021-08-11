@@ -17,14 +17,14 @@ function searchType(urlObj) {
 
         break
 	case "new":
-        var newRelease = `https://movie-database-imdb-alternative.p.rapidapi.com/?min_imdb_rating=95&page=1&r=json`
-        startSearch(newRelease);
+            var newMovies = ["tt6264654", "tt2452150", "tt6246322", "tt10366460", "tt8800266", "tt8639136", "tt10832274", "tt12636872"];
+            prelistSearch(newMovies)
         
 		break
     case "popular":
 		
-        var popularMovies = `https://streaming-availability.p.rapidapi.com/get/basic?country=us`
-        startSearch(popularMovies);
+            var popularMovies = ["tt0111161", "tt4154796", "tt7286456", "tt0068646", "tt0468569", "tt0109830", "tt0993846", "tt0816692", "tt1853728", "tt0133093"];
+            prelistSearch(popularMovies)
         
 		break
     case "watchlist":
@@ -40,7 +40,11 @@ function searchType(urlObj) {
 	}
 }
 
-
+function prelistSearch(array) {
+    for (let i = 0; i < array.length; i++) {
+        searchMovie("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + array[i]);
+    }
+}
 
 function startSearch(newUrl) {
     
