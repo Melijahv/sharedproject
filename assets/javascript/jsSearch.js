@@ -40,13 +40,14 @@ function searchType(urlObj) {
 }
 
 function prelistSearch(array) {
+	clearTheOwlCarousel()
     for (let i = 0; i < array.length; i++) {
         searchMovie("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + array[i]);
     }
 }
 
 function startSearch(newUrl) {
-	
+	clearTheOwlCarousel()
         var url = newUrl
   
 
@@ -210,4 +211,16 @@ function searchHistory(searchItem) {
     //Add the new search history list
     $("#search-history").append(historyList)
     console.log(historyList);
+}
+
+function clearTheOwlCarousel() {
+  //Clear the carousel
+  for (var i = 0; i < $('.owl-item').length; i++) {
+    $(".owl-carousel").trigger('remove.owl.carousel', [i]).trigger('refresh.owl.carousel');
+  }
+  //Clear the cached items
+  for (var i = 0; i < $('.owl-item').length; i++) {
+    $(".owl-carousel").trigger('remove.owl.carousel', [i]).trigger('refresh.owl.carousel');
+  }
+
 }
