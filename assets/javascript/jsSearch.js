@@ -1,6 +1,7 @@
-//$("#hero-carousel").remove();
+
 var initialMovies = ["tt0111161", "tt4154796", "tt7286456", "tt0068646", "tt0468569", "tt0109830", "tt0993846", "tt0816692", "tt1853728", "tt0133093"];
 prelistSearch(initialMovies);
+$("#hero-carousel").remove();
 
 ///////////////////////////////  UNIVERSAL EVENT LISTENER     ///////////////////////
 document.addEventListener("click", function(evnt){
@@ -44,7 +45,7 @@ function searchType(urlObj) {
 
 function prelistSearch(array) {
 // 	clears the stage
-$('.owl-stage').epmty()
+$('.owl-stage').empty()
     for (let i = 0; i < array.length; i++) {
         searchMovie("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + array[i]);
     }
@@ -52,7 +53,7 @@ $('.owl-stage').epmty()
 
 function startSearch(newUrl) {
 //Clears the Stage;	
-    $('.owl-stage').epmty();
+    $('.owl-stage').empty();
 	
         var url = newUrl
   
