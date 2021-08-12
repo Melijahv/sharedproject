@@ -4,6 +4,11 @@
 
 var issueContainer = document.getElementById('holder');
 var fetchButton = document.getElementById('fetch-button');
+var aboutUs = document.getElementById('aboutBtn');
+var myProfile = document.getElementById('profileBtn');
+var pricingPlan = document.getElementById('pricingBtn');
+var contactMe = document.getElementById('contactsBtn');
+
 
 function getApi() {
     var url = "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=series&genre=18&page=10&language=en";
@@ -111,3 +116,20 @@ function searchHistory(searchItem) {
     $("#search-history").append(historyList)
     console.log(historyList);
 }
+
+aboutUs.addEventListener('click',function(){
+    $("#about").addClass("is-active");
+  })
+  
+  myProfile.addEventListener('click',function () {
+  $("#profile").addClass("is-active");
+  })
+  
+  pricingPlan.addEventListener('click',function () {
+    $("#price").addClass("is-active");
+    })
+    
+  contactMe.addEventListener('click',function () {
+      $("#contact").addClass("is-active");
+      })
+  
