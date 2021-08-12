@@ -1,4 +1,7 @@
-
+//Clear the carousel and set inital film lineup
+var initialMovies = ["tt0111161", "tt4154796", "tt7286456", "tt0068646", "tt0468569", "tt0109830", "tt0993846", "tt0816692", "tt1853728", "tt0133093"];
+prelistSearch(initialMovies);
+$("#hero-carousel").remove();
 
 ///////////////////////////////  UNIVERSAL EVENT LISTENER     ///////////////////////
 document.addEventListener("click", function(evnt){
@@ -41,13 +44,14 @@ function searchType(urlObj) {
 }
 
 function prelistSearch(array) {
+	clearTheOwlCarousel()
     for (let i = 0; i < array.length; i++) {
         searchMovie("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + array[i]);
     }
 }
 
 function startSearch(newUrl) {
-    
+	clearTheOwlCarousel()
         var url = newUrl
   
 
@@ -211,4 +215,16 @@ function searchHistory(searchItem) {
     //Add the new search history list
     $("#search-history").append(historyList)
     console.log(historyList);
+}
+
+function clearTheOwlCarousel() {
+  //Clear the carousel
+  for (var i = 0; i < $('.owl-item').length; i++) {
+    $(".owl-carousel").trigger('remove.owl.carousel', [i]).trigger('refresh.owl.carousel');
+  }
+  //Clear the cached items
+  for (var i = 0; i < $('.owl-item').length; i++) {
+    $(".owl-carousel").trigger('remove.owl.carousel', [i]).trigger('refresh.owl.carousel');
+  }
+
 }
