@@ -1,6 +1,6 @@
 
-var initialMovies = ["tt0111161", "tt4154796", "tt7286456", "tt0068646", "tt0468569", "tt0109830", "tt0993846", "tt0816692", "tt1853728", "tt0133093"];
-prelistSearch(initialMovies);
+//var initialMovies = ["tt0111161", "tt4154796", "tt7286456", "tt0068646", "tt0468569", "tt0109830", "tt0993846", "tt0816692", "tt1853728", "tt0133093"];
+//prelistSearch(initialMovies);
 $("#hero-carousel").remove();
 
 ///////////////////////////////  UNIVERSAL EVENT LISTENER     ///////////////////////
