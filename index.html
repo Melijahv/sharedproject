@@ -73,38 +73,7 @@
 
     <!-- NAV -->
     <div class="nav-wrapper">
-        <div class="container">
-            <div class="dropdown-wrapper">
-                <div class="container">
-                    <div class="dropdown">
-                        <button id = "genre" class="dropbtn">GENRE</button>
-                        <div id="myDropdown" class="dropdown-content">
-                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                     
-                        </div>
-                      </div>
-                      <div class="dropdown">
-                        <button id = "year" class="dropbtn">YEAR</button>
-                        <div id="myDropdown" class="dropdown-content">
-                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-         
-                        </div>
-                      </div>
-                      <div class="dropdown">
-                        <button id = "rank" class="dropbtn">RANK</button>
-                        <div id="myDropdown" class="dropdown-content">
-                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-        
-                        </div>
-                      </div>
-                      <div class="dropdown">
-                        <button id ="mpaaRating"  class="dropbtn">AGE RATING</button>
-                        <div id="myDropdown" class="dropdown-content">
-                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-        
-                        </div>
-                      </div>
-                </div>
+
             </div>
             <div class="nav">
                 <a href="#" class="logo">
@@ -117,8 +86,8 @@
                 </datalist>
                 <ul class="nav-menu" id="nav-menu">
                     <li><a id ="new" href="#">NEW</a></li>
-                    <li><a id = "popular" href="#">POPULAR</a></li>
-                    <li><a id = "watchlist" href="#">WATCHLIST</a></li>
+                    <li><a id = "OurPicsk" href="#">OUR PICKS</a></li>
+                    <li><a id = "watchlist" href="#">LOGIN</a></li>
                 </ul>
                 
             </div>
@@ -129,10 +98,10 @@
     <!-- TOP MOVIE SECTION -->
     <div class="hero-section">
         <!-- HERO SLIDE -->
-        <div class="hero-slide">
+        <div class="hero-slide" id = "hero-slide">
             <div class="owl-carousel carousel-nav-center" id="hero-carousel">
                 <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
+                <div class="hero-slide-item" id ="hero-slide-item">
                     <img src="./assets/images/junglecruise.png" alt="">
                     <div class="overlay"></div>
                     <div class="hero-slide-item-content">
@@ -164,7 +133,7 @@
                 </div>
                 <!-- END SLIDE ITEM -->
                 <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
+                <div class="hero-slide-item"id ="hero-slide-item">
                     <img src="./assets/images/f9.png" alt="">
                     <div class="overlay"></div>
                     <div class="hero-slide-item-content">
@@ -196,7 +165,7 @@
                 </div>
                 <!-- END SLIDE ITEM -->
                 <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
+                <div class="hero-slide-item"id ="hero-slide-item">
                     <img src="./assets/images/blackwidow.png" alt="">
                     <div class="overlay"></div>
                     <div class="hero-slide-item-content">
@@ -226,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-slide-item">
+                <div class="hero-slide-item"id ="hero-slide-item">
                     <img src="./assets/images/greenknight.png" alt="">
                     <div class="overlay"></div>
                     <div class="hero-slide-item-content">
@@ -256,7 +225,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-slide-item">
+                <div class="hero-slide-item"id ="hero-slide-item">
                     <img src="./assets/images/spacejam.png" alt="">
                     <div class="overlay"></div>
                     <div class="hero-slide-item-content">
@@ -296,7 +265,7 @@
 
     <!--DROPDOWN FILTERS-->
     
-
+    <div id = "history"></div>
 
     <!-- FOOTER SECTION -->
     <footer class="section">
