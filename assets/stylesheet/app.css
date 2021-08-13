@@ -30,9 +30,7 @@ a {
     color: unset;
 }
 
-img {
-    max-width: 100%;
-}
+
 
 .main-color {
     color: var(--main-color);
@@ -69,7 +67,7 @@ img {
     align-items: center;
     justify-content: space-between;
     color: var(--text-color);
-    height: var(--nav-height);
+    height: auto;
     width: 100%;
 }
 
@@ -87,8 +85,11 @@ img {
     list-style-type: none;
     align-items: center;
     padding: 0 20px;
-    position: relative;
-    top: -10%;
+    top: 15px;
+    right: 0px;
+    position: fixed;
+    
+    
 }
 
 .nav-menu li ~ li {
@@ -203,12 +204,14 @@ a.movie-item:hover {
 }
 
 .hero-slide-item {
+    
     padding-top: 40%;
     position: relative;
     overflow: hidden;
 }
 
 .hero-slide-item img {
+    height: auto;
     width: 100%;
     position: absolute;
     top: 0;
@@ -444,6 +447,27 @@ footer .content {
 
 /* RESPONSIVE */
 
+
+
+@media only screen and (max-width: 1440px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero-slide-item {
+        padding-top: 50%;
+    }
+
+    .item-content-wraper {
+        width: 50%;
+    }
+    .hero-slide-item img {
+        height: auto;
+        width: 100%;
+        
+        
+    }
+}
 @media only screen and (max-width: 1280px) {
     html {
         font-size: 14px;
@@ -455,6 +479,10 @@ footer .content {
 
     .item-content-wraper {
         width: 50%;
+    }
+    .hero-slide-item img {
+        height: auto;
+        min-height: fit-content;
     }
 }
 
@@ -485,7 +513,7 @@ footer .content {
     }
 
     .hero-slide-item img {
-        height: 100%;
+        height: auto;
     }
 
     .item-content-title {
@@ -524,7 +552,7 @@ footer .content {
     
     background-color: #c0392b;
     position: relative;
-    top:-8%;
+    top:-5px;
     color: rgb(255, 255, 255);
     font-size: 16px;
     margin-right: 5px;
@@ -612,22 +640,9 @@ footer .content {
   
 
 }
-.moviePoster{
-
-
-
-}
-.moviePlot{
-
-
-}
-.movieYear{
-
-
-}
 .streamInfo{
 
-    background-color: red;
+    background-color: #c0392b;
     padding: 2px;
 
 
@@ -643,17 +658,11 @@ footer .content {
     border-radius: 3px;
     text-align: center;
   }
-#loadImageClass{
 
-    position: absolute;
-    width: 100%;
-    display: inline-flex;
-
-}
 #new-hero-slide-item{
 
     padding: 0%;
-    width: auto;
+    width: 100%;
     height:auto;
     margin: auto;
     display: inline;
@@ -663,8 +672,111 @@ footer .content {
 #search-text-input{
 
     position: relative;
-    top:-10%;
-    height: 50%;
-    width: 50%;
+    top:-5px;
+    height: 25px;
+    
+    width: 30%;
 }
+
+  .pClass
+  {
+      z-index: 8;  
+      position: fixed;
+      top:0px;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(128, 128, 128, 0.548);
+  
+  }
+  .fClass
+  {
+    
+    position: relative;
+    top: 10%;
+    margin: auto;
+    height:auto;
+    width: 250px;
+    border-radius: 3%;
+    border: hidden;
+    background-color: #181616;
+  
+  }
+  #pwInput{
+  
+    margin-top: 10px;
+    position: relative;
+    left: 25px;
+    width:200px;
+  
+  }
+  #plogin{
+    margin-top: 5px;
+    position: relative;
+    top:10px;
+    left:5px;
+    width: 240px;
+    height: auto;
+    border: 2px solid #c0c7cf;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    color: hsl(206, 17%, 28%);
    
+  
+  }
+  #pFormat{
+  
+    border: hidden;
+    position: relative;
+    left: 40px;
+    width: 150px;
+    justify-content: center;
+    background-color:hsla(0, 0%, 100%, 0);
+  
+  }
+  #bodyLogin {
+    font-family: sans-serif;
+    background-color: #f9fbfd;
+  }
+   
+ 
+  .login-btn {
+    
+    border: none;
+    background-color: hsl(360, 91%, 36%);
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: hsl(0, 0%, 100%);
+    left: 30px;
+    position: relative;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    cursor: pointer;
+    
+  }
+  
+  #password {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    display: block;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 85px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px dashed #c0c7cf;
+    border-radius: 6px;
+    resize: none;
+    overflow: hidden;
+  }

@@ -17,27 +17,29 @@ function searchType(urlObj) {
         var movieSearch = $("#search-text-input").val()
         var searchUrl = `https://movie-database-imdb-alternative.p.rapidapi.com/?s=${movieSearch}&page=1&r=json`;
         startSearch(searchUrl);
-	searchHistory(movieSearch);
-        break
+	      searchHistory(movieSearch);
+  break
 	case "new":
-            var newMovies = ["tt6264654", "tt2452150", "tt6246322", "tt10366460", "tt8800266", "tt8639136", "tt10832274", "tt12636872"];
-            prelistSearch(newMovies)
+        var newMovies = ["tt6264654", "tt2452150", "tt6246322", "tt10366460", "tt8800266", "tt8639136", "tt10832274", "tt12636872"];
+        prelistSearch(newMovies)
         
-		break
-    case "popular":
+	break
+  case "popular":
 		
-            var popularMovies = ["tt0111161", "tt4154796", "tt7286456", "tt0068646", "tt0468569", "tt0109830", "tt0993846", "tt0816692", "tt1853728", "tt0133093"];
-            prelistSearch(popularMovies)
+        var popularMovies = ["tt0111161", "tt4154796", "tt7286456", "tt0068646", "tt0468569", "tt0109830", "tt0993846", "tt0816692", "tt1853728", "tt0133093"];
+        prelistSearch(popularMovies)
         
-		break
-    case "watchlist":
-		    
-        
-		break
-    case "mpaaRating":
-		   
-        
-		break
+	break
+  case "watchlist":
+
+        generatePassword()
+	break
+  case "submitLogin":
+          
+          var usrName = document.getElementById("0").value;
+          var usrPw = document.getElementById("1").value;         
+          document.getElementById("getData").submit(); 
+    
 	default:
 		
 	}
@@ -157,9 +159,9 @@ let navText = ["<i class='bx bx-chevron-left'></i>", "<i class='bx bx-chevron-ri
 //////////////////////////////////       GENERATE THE HTML DYN      ///////////////////////////////////       
     owl.trigger('add.owl.carousel', [jQuery(
      `<div class="hero-slide-item">
-    <img class ="loadImageClass" src="${moviePoster}" alt="">
-    <div class="overlay"></div>
-    <div class="hero-slide-item-content">
+        <img class ="loadImageClass" src="${moviePoster}" alt="">
+        <div class="overlay"></div>
+        <div class="hero-slide-item-content">
         <div class="item-content-wraper">
             <div class="item-content-title top-down">
                 ${movieTitle}
@@ -227,4 +229,93 @@ function clearTheOwlCarousel() {
     $(".owl-carousel").trigger('remove.owl.carousel', [i]).trigger('refresh.owl.carousel');
   }
 
+}
+//////////////////////////////LOGIN WINDOW/////////////////////////////////
+
+
+
+function generatePassword()
+{
+  
+  
+//creat div to hold the form
+
+  var pWindow = document.createElement("form");
+  pWindow.id = "getData";             
+  pWindow.setAttribute('class', 'pClass'); //asign a class .css 
+
+
+//create the form to contain the inputs
+  var form = document.createElement("div");
+  form.setAttribute('id','fClass');
+  form.setAttribute('class','fClass');
+  
+  
+  //toggle for caps, numeric, and symbols
+
+
+  
+  function makeRadioInputs()
+  {
+
+    var numOfInputs = 2;
+    const inputNames = ['User Name','Password']
+    
+        for(let i=0;i<numOfInputs;i++)
+        {
+
+
+          var selectText = document.createElement("p");
+              selectText.setAttribute('id','plogin');
+              selectText.innerHTML = inputNames[i];
+
+          var loginWindow = document.createElement("input");
+          loginWindow.type = "text";
+          loginWindow.checked = true;
+          loginWindow.setAttribute('id',i);
+          loginWindow.setAttribute('name',inputNames[i]);
+                  
+          
+          var format = document.createElement("p");
+              format.setAttribute('id','pFormat');
+          
+
+          
+
+          
+          form.appendChild(selectText);
+          selectText.appendChild(format);
+          format.appendChild(loginWindow);
+          
+          
+
+        }  
+        
+ 
+
+    var genButton = document.createElement("button");
+        genButton.setAttribute("class","login-btn");
+        genButton.setAttribute("id","submitLogin");
+        genButton.innerHTML = "Submit"
+        form.appendChild(genButton);
+
+
+  }
+  makeRadioInputs();
+ 
+    
+  ///The confrimation button for to generate final password.
+     
+    
+    pWindow.appendChild(form);    
+    document.getElementsByTagName("body")[0].appendChild(pWindow);
+
+}
+function finalize()
+{
+    
+    
+    
+
+    
 }
