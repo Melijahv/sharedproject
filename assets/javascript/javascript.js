@@ -9,7 +9,6 @@ var myProfile = document.getElementById('profileBtn');
 var pricingPlan = document.getElementById('pricingBtn');
 var contactMe = document.getElementById('contactsBtn');
 
-
 function getApi() {
     var url = "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=series&genre=18&page=10&language=en";
 
@@ -132,4 +131,7 @@ aboutUs.addEventListener('click',function(){
   contactMe.addEventListener('click',function () {
       $("#contact").addClass("is-active");
       })
-  
+
+$(".modal-close").click(function(){
+    $(".modal").removeClass("is-active");
+});

@@ -651,4 +651,9 @@ footer .content {
     position: relative;
 
 }
-   
+
+.modal.is-active {
+z-index: 1000
+;
+}
+
